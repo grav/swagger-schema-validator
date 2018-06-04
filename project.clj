@@ -1,4 +1,4 @@
-(defproject swagger-schema-validator "0.1.0-SNAPSHOT"
+(defproject swagger-schema-validator "0.1.0"
   :description "Validate JSON objects against Swagger schemas"
   :url "https://github.com/grav/swagger-schema-validator"
   :license {:name "Eclipse Public License"
