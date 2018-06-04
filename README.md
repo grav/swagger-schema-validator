@@ -2,6 +2,8 @@
 
 This Clojure library validates JSON objects against models defined in the definitions section of a Swagger 2 specification
 
+[![Build Status](https://travis-ci.org/grav/swagger-schema-validator.svg?branch=master)](https://travis-ci.org/grav/swagger-schema-validator)
+
 It is a simple wrapper for the Java library at
 https://github.com/bjansen/swagger-schema-validator
 
