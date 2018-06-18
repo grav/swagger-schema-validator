@@ -4,7 +4,8 @@
   (:import [com.github.bjansen]
            (java.io ByteArrayInputStream)
            (com.github.bjansen.ssv SwaggerValidator)
-           (com.github.fge.jsonschema.core.report ProcessingReport)))
+           (com.github.fge.jsonschema.core.report ProcessingReport))
+  (:gen-class))
 
 (defn- string->stream
   [s]
@@ -24,3 +25,15 @@
 
 (defn valid? [schema definition json]
   (.isSuccess (validate schema definition json)))
+
+
+(defn -main [& [schema-filename definition json-filename]]
+  (let [schema (slurp schema-filename)
+        json (slurp json-filename)]
+    (binding [*out* *err*]
+      (doseq [e (explain schema definition json)]
+        (println (cheshire.core/generate-string e))))
+    (if (valid? schema definition json)
+      (System/exit 0)
+      (System/exit 1))))
+
