@@ -36,7 +36,7 @@ $ lein uberjar
 ...
 
 
-$ java -jar target/swagger-schema-validator-0.2.0-standalone.jar  <( echo '{"definitions":{"mydef": {"type":"integer"}}}' ) "/definitions/mydef" <( echo '42')
+$ java -jar target/swagger-schema-validator-0.2.0-standalone.jar  <( echo '{"definitions":{"mydef": {"type":"integer"}}}' ) "/definitions/mydef" <( echo '"42"')
 
 {"level":"error","schema":{"loadingURI":"#","pointer":"/definitions/mydef"},"instance":{"pointer":""},"domain":"validation","keyword":"type","message":"instance type (string) does not match any allowed primitive type (allowed: [\"integer\"])","found":"string","expected":["integer"]}
 
